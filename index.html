@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SDFLib</title>
+    <script src="./build/build.js"></script>
+    <script id="quadVS" type="x-shader/x-vertex">
+        //From https://www.saschawillems.de/?page_id=2122
+        #version 300
+        out vec2 uv;
+        void main()
+        {
+            uv = vec2((gl_VertexID << 1) & 2, gl_VertexID & 2);
+	        gl_Position = vec4(uv * 2.0f + -1.0f, 0.0f, 1.0f);
+        }
+    </script>
+
+    <script id="renderPS" type="x-shader/x-fragment">
+        #version 300
+        in vec2 uv;
+        void main()
+        {
+            gl_FragColor = vec4(vec3(100, 149, 237)/255.0, 1.0);
+        }
+    </script>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+</html>
