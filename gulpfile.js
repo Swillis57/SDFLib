@@ -40,10 +40,6 @@ function compile(watch) {
 			.pipe(debug({ title: "Source: "}))
 			.pipe(buffer())
 			.pipe(debug({ title: "Buffer: "}))
-			.pipe(sourceMaps.init({ loadMaps: true }))
-			.pipe(uglify())
-			.pipe(sourceMaps.write('./'))
-			.pipe(debug({ title: "Sourcemap: "}))
 			.pipe(gulp.dest('./build'))
 			.pipe(debug({ title: "Output: "}));
 	}

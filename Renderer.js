@@ -5,7 +5,7 @@ class Renderer
 		this.canvas = document.querySelector("canvas");
 		this.canvas.width = window.innerWidth;
 		this.canvas.height = window.innerHeight;
-		this.gl = this.canvas.getContext("webgl2") || this.canvas.getContext("webgl2-experimental");
+		this.gl = this.canvas.getContext("webgl2");
 
 		let gl = this.gl;
 		gl.clearColor(0, 0, 0, 1.0);
@@ -21,13 +21,6 @@ class Renderer
 	//Render the SDFs
 	Draw() {
 
-	}
-
-	RenderLoop() {
-		Update();
-		Draw();
-
-		requestAnimationFrame(this.RenderLoop.bind(this));
 	}
 
 	CreateShaderProgram(vsElement, psElement)

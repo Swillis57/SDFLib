@@ -1,6 +1,10 @@
 
 let Renderer = require("./Renderer");
+let UI = require("./Interface");
 
-document.addEventListener("DOMContentLoaded", function(){
+window.onload = function(){
 	let renderer = new Renderer();
-});
+	let ui = new UI();
+
+
+};

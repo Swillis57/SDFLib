@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>SDFLib</title>
     <script src="./build/build.js"></script>
-    <script id="quadVS" type="x-shader/x-vertex">
+    <script id="quadVS" type="x-shader/x-vertex">#version 300 es
         //From https://www.saschawillems.de/?page_id=2122
-        #version 300
+        precision highp float;
         out vec2 uv;
         void main()
         {
@@ -15,12 +15,14 @@
         }
     </script>
 
-    <script id="renderPS" type="x-shader/x-fragment">
-        #version 300
+    <script id="renderPS" type="x-shader/x-fragment">#version 300 es
+        precision highp float;
         in vec2 uv;
+        out vec4 fragColor;
         void main()
         {
-            gl_FragColor = vec4(vec3(100, 149, 237)/255.0, 1.0);
+            vec3 blue = vec3(100, 149, 237)/255.0;
+            fragColor = vec4(blue, 1.0);
         }
     </script>
 </head>
